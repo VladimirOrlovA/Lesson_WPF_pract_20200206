@@ -18,7 +18,7 @@ namespace QrApp.lib
             var request = new RestRequest($"code/?{text}&{size}&0");
 
             var response = client.Execute(request);
-            var result = response.Content;
+            var result = response.Content;  
         }
     }
 }
