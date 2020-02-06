@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+        /*  Инфо для изучения
+         *  https://www.nuget.org/packages/RestSharp
+            http://restsharp.org/getting-started/#basic-usage
+        */
+
 using RestSharp;
 using QrApp.lib;
 
@@ -11,6 +16,7 @@ namespace QrApp.lib
 {
     public class Qr
     {
+
         public static void genQR(string text, int size)
         {
 
@@ -18,7 +24,7 @@ namespace QrApp.lib
             var request = new RestRequest($"code/?{text}&{size}&0");
 
             var response = client.Execute(request);
-            var result = response.Content;  
+            var result = response.Content;
         }
     }
 }
