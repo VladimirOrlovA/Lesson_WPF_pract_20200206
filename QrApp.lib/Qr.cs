@@ -16,9 +16,11 @@ namespace QrApp.lib
 {
     public class Qr
     {
+        string website { get; set; }
 
         public static void genQR(string text, int size)
         {
+            string query = string.Format("code/?{0}&{1}&0", text, size);
 
             var client = new RestClient("https://qrcoder.ru");
             var request = new RestRequest($"code/?{text}&{size}&0");
